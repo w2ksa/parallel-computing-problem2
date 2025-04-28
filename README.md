@@ -1,4 +1,3 @@
-
 # Parallel Computing - Problem 2
 
 ## Message Passing Interface (MPI) - Ring Communication
@@ -49,4 +48,31 @@ The goal is to demonstrate basic message-passing and communication patterns in a
 The output will show each process printing the received message.
 
 Example output when running with 3 processes:
+
+Process 1 received message: 'Hello from Process 0' Process 2 received message: 'Hello from Process 0 -> P1' Process 0 received message: 'Hello from Process 0 -> P1 -> P2'
+
+
+
+---
+
+### How to Compile and Run
+
+**To compile the code:**
+```bash
+mpicc -o ring_mpi problem2_message_passing_ring.c
+To run the program with 3 processes:
+ mpirun -np 3 ./ring_mpi
+Explanation:
+
+-np 3 specifies running with 3 processes.
+
+./ring_mpi is the compiled executable.
+
+Notes
+Make sure you have MPI installed (e.g., OpenMPI or MPICH).
+
+You can change the number of processes by modifying the -np value.
+
+The program demonstrates distributed message passing using a ring topology
+
 
